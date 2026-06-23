@@ -42,42 +42,45 @@
         <!-- Particle container for celebrations -->
         <div class="particles" id="particles"></div>
 
-        <!-- Preset Buttons -->
-        <div class="presets">
-            <button class="preset-btn" data-minutes="5" data-theme="baking">
-                <span class="preset-icon">🍪</span>
-                <span class="preset-label">5 min</span>
-            </button>
-            <button class="preset-btn" data-minutes="10" data-theme="painting">
-                <span class="preset-icon">🎨</span>
-                <span class="preset-label">10 min</span>
-            </button>
-            <button class="preset-btn" data-minutes="15" data-theme="gardening">
-                <span class="preset-icon">🌸</span>
-                <span class="preset-label">15 min</span>
-            </button>
-            <button class="preset-btn" data-minutes="25" data-theme="reading">
-                <span class="preset-icon">📖</span>
-                <span class="preset-label">25 min</span>
-            </button>
-            <button class="preset-btn" data-minutes="0" data-theme="custom">
-                <span class="preset-icon">⏱️</span>
-                <span class="preset-label">Custom</span>
-            </button>
-        </div>
-
-        <!-- Custom Duration Input -->
-        <div class="custom-input-container" id="customInput" style="display: none;">
-            <input type="number" id="customMinutes" class="custom-input" 
-                   placeholder="Minutes..." min="1" max="120">
-            <button class="custom-set-btn" id="customSetBtn">Set ♡</button>
-        </div>
-
         <!-- Controls -->
         <div class="controls">
             <button class="control-btn start-btn" id="startBtn">Start</button>
             <button class="control-btn pause-btn" id="pauseBtn" disabled>Pause</button>
             <button class="control-btn reset-btn" id="resetBtn" disabled>Reset</button>
+        </div>
+
+        <!-- Preset Section (slides away when timer runs) -->
+        <div class="presets-section" id="presetsSection">
+            <!-- Preset Buttons -->
+            <div class="presets">
+                <button class="preset-btn" data-minutes="5" data-theme="baking">
+                    <span class="preset-icon">🍪</span>
+                    <span class="preset-label">5 min</span>
+                </button>
+                <button class="preset-btn" data-minutes="10" data-theme="painting">
+                    <span class="preset-icon">🎨</span>
+                    <span class="preset-label">10 min</span>
+                </button>
+                <button class="preset-btn" data-minutes="15" data-theme="gardening">
+                    <span class="preset-icon">🌸</span>
+                    <span class="preset-label">15 min</span>
+                </button>
+                <button class="preset-btn" data-minutes="25" data-theme="reading">
+                    <span class="preset-icon">📖</span>
+                    <span class="preset-label">25 min</span>
+                </button>
+                <button class="preset-btn" data-minutes="0" data-theme="custom">
+                    <span class="preset-icon">⏱️</span>
+                    <span class="preset-label">Custom</span>
+                </button>
+            </div>
+
+            <!-- Custom Duration Input -->
+            <div class="custom-input-container" id="customInput" style="display: none;">
+                <input type="number" id="customMinutes" class="custom-input" 
+                       placeholder="Minutes..." min="1" max="120">
+                <button class="custom-set-btn" id="customSetBtn">Set ♡</button>
+            </div>
         </div>
 
         <!-- Status Message -->
