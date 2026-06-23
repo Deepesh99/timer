@@ -282,6 +282,7 @@ body {
     gap: 10px;
     justify-content: center;
     margin-bottom: 20px;
+    margin-top: 3px;
 }
 
 .preset-btn {
