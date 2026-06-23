@@ -27,7 +27,16 @@ const customInputContainer = document.getElementById('customInput');
 const customMinutesInput = document.getElementById('customMinutes');
 const customSetBtn = document.getElementById('customSetBtn');
 const presetBtns = document.querySelectorAll('.preset-btn');
+const presetsSection = document.getElementById('presetsSection');
 const app = document.querySelector('.app');
+
+function hidePresets() {
+    presetsSection.classList.add('hidden');
+}
+
+function showPresets() {
+    presetsSection.classList.remove('hidden');
+}
 
 // --- Constants ---
 const RING_CIRCUMFERENCE = 2 * Math.PI * 120; // ~753.98
@@ -371,6 +380,7 @@ function startTimer() {
         startBtn.disabled = true;
         pauseBtn.disabled = false;
         requestWakeLock();
+        hidePresets();
         setStatus('Let\'s keep going! 💕');
         return;
     }
@@ -384,6 +394,9 @@ function startTimer() {
 
     // Prevent screen from locking
     requestWakeLock();
+
+    // Hide presets while timer is running
+    hidePresets();
 
     updateDisplay();
     setCharacterState('running');
@@ -413,6 +426,7 @@ function pauseTimer() {
     state.isRunning = false;
     state.isPaused = true;
     releaseWakeLock();
+    showPresets();
 
     setCharacterState('idle');
     startBtn.disabled = false;
@@ -431,6 +445,7 @@ function resetTimer() {
     state.currentTheme = null;
     state.alertsPlayed = { stage: false, twoMin: false, done: false };
     releaseWakeLock();
+    showPresets();
 
     setProgress(0);
     timeDisplay.textContent = '00:00';
